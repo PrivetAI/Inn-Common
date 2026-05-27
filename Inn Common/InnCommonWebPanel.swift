@@ -8,6 +8,9 @@ struct InnCommonWebPanel: UIViewRepresentable {
         let config = WKWebViewConfiguration()
         let webView = WKWebView(frame: .zero, configuration: config)
         webView.allowsBackForwardNavigationGestures = true
+        webView.scrollView.contentInsetAdjustmentBehavior = .always
+        webView.isOpaque = true
+        webView.backgroundColor = .black
         if let url = URL(string: urlString) {
             webView.load(URLRequest(url: url))
         }

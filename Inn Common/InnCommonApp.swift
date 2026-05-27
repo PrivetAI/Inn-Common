@@ -31,7 +31,8 @@ struct InnCommonApp: App {
                 if let ready = innCommonLinkReady {
                     if ready {
                         InnCommonWebPanel(urlString: innCommonSourceLink)
-                            .edgesIgnoringSafeArea(.all)
+                            .edgesIgnoringSafeArea(.bottom)
+                            .background(Color.black.ignoresSafeArea())
                     } else {
                         ContentView()
                             .environmentObject(store)
